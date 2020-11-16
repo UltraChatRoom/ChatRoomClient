@@ -1,0 +1,12 @@
+.loginBtn {
+    -fx-background-radius: 10em;
+    -fx-background-color: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}
+
+.loginPane {
+    -fx-background-color: white;
+}
+
+.clossWindow {
+    -fx-background-color: #00000000;
+}

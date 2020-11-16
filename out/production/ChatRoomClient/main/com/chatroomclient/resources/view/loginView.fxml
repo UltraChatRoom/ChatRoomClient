@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane fx:id="loginPane" onMouseClicked="#loginPaneClick" prefHeight="400.0" prefWidth="600.0" styleClass="loginPane" stylesheets="@../static/style/login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.com.chatroomclient.java.controller.LoginController">
+    <children>
+        <ImageView fitHeight="400.0" fitWidth="232.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../static/img/login.png" />
+            </image>
+        </ImageView>
+        <PasswordField fx:id="password" focusTraversable="false" layoutX="303.0" layoutY="200.0" promptText="密码" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="95.0" />
+        <TextField fx:id="userName" focusTraversable="false" layoutX="303.0" layoutY="145.0" promptText="账号" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="95.0" />
+        <Button fx:id="loginBtn" layoutX="349.0" layoutY="265.0" mnemonicParsing="false" onMouseClicked="#loginBtnMouseClick" onMouseEntered="#loginBtnMouseEnter" onMouseExited="#loginBtnMouseExit" onMousePressed="#loginBtnMousePress" onMouseReleased="#loginBtnMouseRelease" prefHeight="30.0" prefWidth="111.0" styleClass="loginBtn" stylesheets="@../static/style/login.css" text="登录" AnchorPane.leftAnchor="349.0" AnchorPane.rightAnchor="140.0" />
+        <Label layoutX="6.0" layoutY="376.0" prefHeight="20.0" prefWidth="99.0" text="©Magic Chat" visible="false" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="509.0">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+        <Label layoutX="84.0" layoutY="90.0" text="○JavaFX" />
+      <Button fx:id="closeBtn" layoutX="579.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#closeMouseClick" onMouseEntered="#closeMouseEnter" onMouseExited="#closeMouseExit" styleClass="clossWindow" stylesheets="@../static/style/login.css" text="❌" />
+      <Label fx:id="forget" layoutX="307.0" layoutY="341.0" onMouseEntered="#forgetMouseEnter" onMouseExited="#forgetMouseExit" text="忘记密码" textFill="#a1a1a1" />
+      <Label fx:id="register" layoutX="459.0" layoutY="341.0" onMouseClicked="#registerMouseClick" onMouseEntered="#registerMouseEnter" onMouseExited="#registerMouseExit" text="注册账号" textFill="#a1a1a1" />
+      <ImageView fitHeight="85.0" fitWidth="133.0" layoutX="363.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../static/img/MagicChatLogo.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>
