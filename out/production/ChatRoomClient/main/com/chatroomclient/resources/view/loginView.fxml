@@ -11,7 +11,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 
-<AnchorPane fx:id="loginPane" onMouseClicked="#loginPaneClick" prefHeight="400.0" prefWidth="600.0" styleClass="loginPane" stylesheets="@../static/style/login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.com.chatroomclient.java.controller.LoginController">
+<AnchorPane fx:id="loginPane" prefHeight="400.0" prefWidth="600.0" styleClass="loginPane" stylesheets="@../static/style/login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.com.chatroomclient.java.controller.LoginController">
     <children>
         <ImageView fitHeight="400.0" fitWidth="232.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -27,7 +27,7 @@
          </font></Label>
         <Label layoutX="84.0" layoutY="90.0" text="○JavaFX" />
       <Button fx:id="closeBtn" layoutX="579.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#closeMouseClick" onMouseEntered="#closeMouseEnter" onMouseExited="#closeMouseExit" styleClass="clossWindow" stylesheets="@../static/style/login.css" text="❌" />
-      <Label fx:id="forget" layoutX="307.0" layoutY="341.0" onMouseEntered="#forgetMouseEnter" onMouseExited="#forgetMouseExit" text="忘记密码" textFill="#a1a1a1" />
+      <Label fx:id="forget" layoutX="307.0" layoutY="341.0" onMouseClicked="#forgetMouseClick" onMouseEntered="#forgetMouseEnter" onMouseExited="#forgetMouseExit" text="忘记密码" textFill="#a1a1a1" />
       <Label fx:id="register" layoutX="459.0" layoutY="341.0" onMouseClicked="#registerMouseClick" onMouseEntered="#registerMouseEnter" onMouseExited="#registerMouseExit" text="注册账号" textFill="#a1a1a1" />
       <ImageView fitHeight="85.0" fitWidth="133.0" layoutX="363.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
          <image>

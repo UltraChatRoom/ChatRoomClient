@@ -28,7 +28,7 @@ public class SecurityUtils {
     public static String createNewLoginName() {
         String newLoginName = "";
         Random random = new Random();
-        for (int i = 0; i < SystemConstant.NEW_LOGIN_NAME_MAX_LENGTH; i++) {
+        for (int i = 0; i < SystemConstant.LOGIN_NAME_MAX_LENGTH; i++) {
             newLoginName += String.valueOf(random.nextInt(10));
         }
         return newLoginName;

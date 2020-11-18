@@ -11,9 +11,14 @@ import main.com.chatroomclient.java.utils.DragUtil;
 
 public class Main extends Application {
 
+    /** 登陆界面 */
     private static Stage loginStage;
 
+    /** 注册界面 */
     private static Stage registerStage = null;
+
+    /** 密码找回界面 */
+    private static Stage recoverStage = null;
 
     /** 启动窗口 */
     public void startApplication() {
@@ -52,8 +57,27 @@ public class Main extends Application {
         loginStage = primaryStage;
         primaryStage.show();
 
+        /* 创建注册窗口 */
         createRegisterStage();
+        
+        /* 创建找回密码窗口 */
+        createRecoverStage();
+        
         startSucceeded();
+    }
+
+    /**
+     * @Author GirtSeanking
+     * @Description //TODO 找回密码窗口
+     * @Date 11:40 
+     * @Param []
+     * @return void
+     **/
+    public void createRecoverStage() {
+        recoverStage = new Stage();
+        recoverStage.initStyle(StageStyle.UNDECORATED);
+        recoverStage.setTitle("找回密码");
+        recoverStage.getIcons().add(new Image(Main.class.getResourceAsStream("../resources/static/img/MagicChatLogo.png")));
     }
 
     /**
@@ -68,6 +92,10 @@ public class Main extends Application {
         registerStage.initStyle(StageStyle.UNDECORATED);
         registerStage.setTitle("注册");
         registerStage.getIcons().add(new Image(Main.class.getResourceAsStream("../resources/static/img/MagicChatLogo.png")));
+    }
+
+    public static Stage getRecoverStage() {
+        return recoverStage;
     }
 
     public static Stage getRegisterStage() {

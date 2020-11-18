@@ -22,6 +22,9 @@ public class RegisterController {
 
     @FXML
     private Button closeBtn;
+    
+    @FXML
+    private Button backBtn;
 
     @FXML
     private Label welcomeLabel;
@@ -52,8 +55,8 @@ public class RegisterController {
      * @return void
      **/
     public void closeMouseClick(MouseEvent mouseEvent) {
-        Main.getRegisterStage().close();
-        Main.getLoginStage().show();
+        System.out.println("(♥◠‿◠)ﾉﾞ  MagicChat关闭成功   ლ(´ڡ`ლ)ﾞ  \n" + "o(*^＠^*)o 感谢您的使用！！！ O(∩_∩)O\n");
+        System.exit(0);
     }
 
     /**
@@ -66,6 +69,32 @@ public class RegisterController {
     }
     public void closeMouseExit(MouseEvent mouseEvent) {
         closeBtn.setStyle("-fx-background-color: #00000000");
+    }
+
+    /**
+     * @Author GirtSeanking
+     * @Description //TODO 窗口返回按钮点击事件响应
+     * @Date 10:50 
+     * @Param [mouseEvent]
+     * @return void
+     **/
+    public void backMouseClick(MouseEvent mouseEvent) {
+        Main.getRegisterStage().close();
+        Main.getLoginStage().show();
+    }
+
+    /**
+     * @Author GirtSeanking
+     * @Description //TODO 窗口返回按钮样式变化设置
+     * @Date 10:50 
+     * @Param [mouseEvent]
+     * @return void
+     **/
+    public void backMouseEnter(MouseEvent mouseEvent) {
+        backBtn.setStyle("-fx-background-color: #99999999");
+    }
+    public void backMouseExit(MouseEvent mouseEvent) {
+        backBtn.setStyle("-fx-background-color: #00000000");
     }
 
     /**
@@ -358,5 +387,7 @@ public class RegisterController {
     public void userReister() {
         
     }
+
+
 
 }

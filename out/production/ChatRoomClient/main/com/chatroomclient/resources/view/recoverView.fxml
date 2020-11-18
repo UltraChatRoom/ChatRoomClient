@@ -18,10 +18,10 @@
       <Button fx:id="closeBtn" layoutX="269.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#closeBtnMouseClick" onMouseEntered="#closeBtnMouseEnter" onMouseExited="#closeBtnMouseExit" styleClass="clossWindow" stylesheets="@../static/style/login.css" text="❌" />
       <Button fx:id="backBtn" layoutX="234.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#backBtnMouseClick" onMouseEntered="#backBtnMouseEnter" onMouseExited="#backBtnMouseExit" styleClass="clossWindow" stylesheets="@../static/style/login.css" text="←" />
       <TextField fx:id="loginName" layoutX="73.0" layoutY="100.0" onKeyReleased="#loginNameKeyRelease" onMouseClicked="#loginNameMouseClick" promptText="账号" />
-      <TextField fx:id="securityQuestion" editable="false" layoutX="73.0" layoutY="147.0" promptText="密保问题" visible="false" />
-      <TextField fx:id="questionAnswer" layoutX="73.0" layoutY="200.0" onKeyReleased="#questionAnswerKeyRelease" promptText="密保答案" visible="false" />
-      <PasswordField fx:id="newPassword" layoutX="73.0" layoutY="249.0" onKeyReleased="#newPasswordKeyRelease" promptText="新密码" visible="false" />
-      <PasswordField fx:id="passwordAgain" layoutX="73.0" layoutY="297.0" onKeyReleased="#passwordAgainKeyRelease" promptText="再次确认" visible="false" />
+      <TextField fx:id="securityQuestion" editable="false" layoutX="54.0" layoutY="147.0" promptText="密保问题" visible="false" />
+      <TextField fx:id="questionAnswer" layoutX="54.0" layoutY="200.0" onKeyReleased="#questionAnswerKeyRelease" promptText="密保答案" visible="false" />
+      <PasswordField fx:id="newPassword" layoutX="54.0" layoutY="249.0" onKeyReleased="#newPasswordKeyRelease" promptText="新密码" visible="false" />
+      <PasswordField fx:id="passwordAgain" layoutX="54.0" layoutY="297.0" onKeyReleased="#passwordAgainKeyRelease" promptText="再次确认" visible="false" />
       <Button layoutX="97.0" layoutY="350.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="116.0" styleClass="loginBtn" stylesheets="@../static/style/login.css" text="确认" />
    </children>
 </AnchorPane>
