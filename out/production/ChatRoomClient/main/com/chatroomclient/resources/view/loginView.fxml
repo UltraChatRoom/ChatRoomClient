@@ -19,8 +19,8 @@
             </image>
         </ImageView>
         <PasswordField fx:id="password" focusTraversable="false" layoutX="303.0" layoutY="200.0" promptText="密码" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="95.0" />
-        <TextField fx:id="userName" focusTraversable="false" layoutX="303.0" layoutY="145.0" promptText="账号" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="95.0" />
-        <Button fx:id="loginBtn" layoutX="349.0" layoutY="265.0" mnemonicParsing="false" onMouseClicked="#loginBtnMouseClick" onMouseEntered="#loginBtnMouseEnter" onMouseExited="#loginBtnMouseExit" onMousePressed="#loginBtnMousePress" onMouseReleased="#loginBtnMouseRelease" prefHeight="30.0" prefWidth="111.0" styleClass="loginBtn" stylesheets="@../static/style/login.css" text="登录" AnchorPane.leftAnchor="349.0" AnchorPane.rightAnchor="140.0" />
+        <TextField fx:id="loginName" focusTraversable="false" layoutX="303.0" layoutY="145.0" promptText="账号" styleClass="userName" stylesheets="@../static/style/login.css" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="95.0" />
+        <Button fx:id="loginBtn" layoutX="349.0" layoutY="265.0" mnemonicParsing="false" onMouseEntered="#loginBtnMouseEnter" onMouseExited="#loginBtnMouseExit" onMousePressed="#loginBtnMousePress" onMouseReleased="#loginBtnMouseRelease" prefHeight="30.0" prefWidth="111.0" styleClass="loginBtn" stylesheets="@../static/style/login.css" text="登录" AnchorPane.leftAnchor="349.0" AnchorPane.rightAnchor="140.0" />
         <Label layoutX="6.0" layoutY="376.0" prefHeight="20.0" prefWidth="99.0" text="©Magic Chat" visible="false" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="509.0">
          <font>
             <Font size="10.0" />

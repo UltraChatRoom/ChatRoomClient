@@ -2,7 +2,7 @@ package main.com.chatroomclient.test;
 
 /**
  * @program: IntelliJ IDEA
- * @description: null
+ * @description: //TODO 连接服务器测试
  * @author: PrograpeYoung
  * @create: 2020-11-16 18:32:09
  */

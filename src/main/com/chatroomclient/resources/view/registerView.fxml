@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="main.com.chatroomclient.java.controller.RegisterController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="loginPane" stylesheets="@../static/style/login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.com.chatroomclient.java.controller.RegisterController">
+   <children>
+      <ImageView disable="true" fitHeight="400.0" fitWidth="398.0" layoutX="104.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../static/img/MagicRegisterBackground.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="registerBtn" layoutX="247.0" layoutY="345.0" mnemonicParsing="false" onMouseEntered="#registerBtnMouseEnter" onMouseExited="#registerBtnMouseExit" onMousePressed="#registerBtnMousePress" onMouseReleased="#registerBtnMouseRelease" prefHeight="30.0" prefWidth="111.0" styleClass="loginBtn" stylesheets="@../static/style/login.css" text="注册" />
+      <Label fx:id="welcomeLabel" alignment="CENTER" layoutY="53.0" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="600.0" styleClass="welcomeLabel" stylesheets="@../static/style/login.css" text="注册" textAlignment="CENTER">
+         <font>
+            <Font name="YouYuan" size="18.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="registerPassword" layoutX="74.0" layoutY="200.0" onKeyReleased="#passwordKeyRelease" promptText="密码" />
+      <PasswordField fx:id="registerPasswordAgain" layoutX="74.0" layoutY="259.0" onKeyReleased="#passwordAaginKeyRelease" promptText="确认密码" />
+      <TextField fx:id="securityQuestion" layoutX="348.0" layoutY="141.0" onKeyReleased="#securityQuestionKeyRelease" promptText="密保问题" />
+      <TextField fx:id="questionAnswer" layoutX="348.0" layoutY="200.0" onKeyReleased="#questionAnswerKeyRelease" promptText="问题答案" />
+      <Button fx:id="closeBtn" layoutX="573.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#closeMouseClick" onMouseEntered="#closeMouseEnter" onMouseExited="#closeMouseExit" styleClass="clossWindow" stylesheets="@../static/style/login.css" text="❌" />
+      <TextField fx:id="userName" layoutX="74.0" layoutY="141.0" onKeyReleased="#userNameKeyReleas" onMouseClicked="#userNameMouseClick" promptText="您的昵称" />
+   </children>
 </AnchorPane>

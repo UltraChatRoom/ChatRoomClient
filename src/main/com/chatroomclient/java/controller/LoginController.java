@@ -1,13 +1,24 @@
 package main.com.chatroomclient.java.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import main.com.chatroomclient.java.Main;
+import main.com.chatroomclient.java.utils.DragUtil;
 
+import java.io.IOException;
+
+/**
+ * @Author GirtSeanking
+ * @Description //TODO 登录窗口的控制层
+ * @Date 11:26
+ **/
 public class LoginController {
 
     @FXML
@@ -17,7 +28,7 @@ public class LoginController {
     private Button closeBtn;
 
     @FXML
-    private TextField userName;
+    private TextField loginName;
 
     @FXML
     private TextField password;
@@ -29,9 +40,6 @@ public class LoginController {
     private Label register;
 
     /** 登录按钮的系列操作 */
-    public void loginBtnMouseClick(MouseEvent mouseEvent) {
-
-    }
 
     public void loginBtnMouseEnter(MouseEvent mouseEvent) {
         loginBtn.setStyle("-fx-background-color: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%)");
@@ -51,6 +59,7 @@ public class LoginController {
 
     /** 关闭窗口按钮操作 */
     public void closeMouseClick(MouseEvent mouseEvent) {
+        System.out.println("(♥◠‿◠)ﾉﾞ  MagicChat关闭成功   ლ(´ڡ`ლ)ﾞ  \n" + "o(*^＠^*)o 感谢您的使用！！！ O(∩_∩)O\n");
         System.exit(0);
     }
 
@@ -89,6 +98,16 @@ public class LoginController {
     }
 
     public void registerMouseClick(MouseEvent mouseEvent) {
-
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/com/chatroomclient/resources/view/registerView.fxml"));
+            Parent root = loader.load();
+            Main.getRegisterStage().setScene(new Scene(root));
+            /* 窗口移动监听器 */
+            DragUtil.addDragListener(Main.getRegisterStage(), root);
+            Main.getLoginStage().hide();
+            Main.getRegisterStage().show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

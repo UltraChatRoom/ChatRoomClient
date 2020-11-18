@@ -10,3 +10,7 @@
 .clossWindow {
     -fx-background-color: #00000000;
 }
+
+.welcomeLabel {
+    -fx-background-color: white;
+}
