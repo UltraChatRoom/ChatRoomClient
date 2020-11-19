@@ -1,0 +1,27 @@
+.mainPane {
+    -fx-background-color: white;
+}
+
+.titleBarBtn {
+    -fx-background-color: #00000000;
+}
+/* 头像样式 */
+.avatar {
+
+}
+/* 头像鼠标悬停时样式 */
+.avatar:hover {
+    -fx-opacity: 0.9;
+}
+/* 头像鼠标点击时样式 */
+.avatar:pressed {
+    -fx-opacity: 0.8;
+}
+
+.skinBtn {
+
+}
+
+.skinBtn:hover {
+    -fx-opacity: 1;
+}

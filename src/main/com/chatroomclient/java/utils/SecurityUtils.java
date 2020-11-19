@@ -1,6 +1,6 @@
 package main.com.chatroomclient.java.utils;
 
-import main.com.chatroomclient.java.common.constant.SystemConstant;
+import main.com.chatroomclient.java.common.constant.ApplicationConstant;
 
 import java.security.MessageDigest;
 import java.util.Random;
@@ -28,7 +28,7 @@ public class SecurityUtils {
     public static String createNewLoginName() {
         String newLoginName = "";
         Random random = new Random();
-        for (int i = 0; i < SystemConstant.LOGIN_NAME_MAX_LENGTH; i++) {
+        for (int i = 0; i < ApplicationConstant.LOGIN_NAME_MAX_LENGTH; i++) {
             newLoginName += String.valueOf(random.nextInt(10));
         }
         return newLoginName;

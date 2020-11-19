@@ -66,13 +66,27 @@ public class LoginController {
     public void loginBtnMouseRelease(MouseEvent mouseEvent) {
         /* 登录按钮样式变化 */
         loginBtn.setStyle("-fx-background-color: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%)");
-        
-        
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/com/chatroomclient/resources/view/friendsListView.fxml"));
+            Parent root = loader.load();
+            Main.getFriendsListStage().setScene(new Scene(root));
+            /* 窗口移动监听器 */
+            DragUtil.addDragListener(Main.getFriendsListStage(), root);
+
+            /* 界面初始化 */
+//            new HomeController().initialize();
+
+            Main.getLoginStage().hide();
+            Main.getFriendsListStage().show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
      * @Author GirtSeanking
-     * @Description //TODO 关闭窗口按钮样式变化设置
+     * @Description //TODO 关闭窗口按钮点击事件响应
      * @Date 10:17 
      * @Param [mouseEvent]
      * @return void
@@ -81,6 +95,14 @@ public class LoginController {
         System.out.println("(♥◠‿◠)ﾉﾞ  MagicChat关闭成功   ლ(´ڡ`ლ)ﾞ  \n" + "o(*^＠^*)o 感谢您的使用！！！ O(∩_∩)O\n");
         System.exit(0);
     }
+
+    /**
+     * @Author GirtSeanking
+     * @Description //TODO 关闭窗口按钮样式变化设置
+     * @Date 20:43
+     * @Param [mouseEvent]
+     * @return void
+     **/
     public void closeMouseEnter(MouseEvent mouseEvent) {
         closeBtn.setStyle("-fx-background-color: #99999999");
     }

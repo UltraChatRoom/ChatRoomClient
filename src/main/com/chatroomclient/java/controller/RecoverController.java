@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import main.com.chatroomclient.java.Main;
-import main.com.chatroomclient.java.common.constant.SystemConstant;
+import main.com.chatroomclient.java.common.constant.ApplicationConstant;
 
 /**
  * @className: RecoverController
@@ -114,7 +114,7 @@ public class RecoverController {
     public void loginNameKeyRelease(KeyEvent keyEvent) {
         if (loginName.getText().isEmpty()) {
             welcomeLabel.setText("请输入您的账号");
-        } else if (loginName.getText().length() == SystemConstant.LOGIN_NAME_MAX_LENGTH) {
+        } else if (loginName.getText().length() == ApplicationConstant.LOGIN_NAME_MAX_LENGTH) {
             welcomeLabel.setText("请填写您密保问题的答案");
             securityQuestion.setVisible(true);
             questionAnswer.setVisible(true);

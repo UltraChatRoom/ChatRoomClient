@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.stage.Window;
 import main.com.chatroomclient.java.utils.DragUtil;
 
 public class Main extends Application {
@@ -19,6 +20,9 @@ public class Main extends Application {
 
     /** 密码找回界面 */
     private static Stage recoverStage = null;
+
+    /** 好友列表界面 */
+    private static Stage friendsListStage = null;
 
     /** 启动窗口 */
     public void startApplication() {
@@ -62,8 +66,25 @@ public class Main extends Application {
         
         /* 创建找回密码窗口 */
         createRecoverStage();
+
+        /*  创建主界面（好友列表）*/
+        createFrindsListeStage();
         
         startSucceeded();
+    }
+
+    /**
+     * @Author GirtSeanking
+     * @Description //TODO 程序主界面 好友列表窗口
+     * @Date 20:11 
+     * @Param []
+     * @return void
+     **/
+    public void createFrindsListeStage() {
+        friendsListStage = new Stage();
+        friendsListStage.initStyle(StageStyle.UNDECORATED);
+        friendsListStage.setTitle("MC");
+        friendsListStage.getIcons().add(new Image(Main.class.getResourceAsStream("../resources/static/img/MagicChatLogo.png")));
     }
 
     /**
@@ -92,6 +113,10 @@ public class Main extends Application {
         registerStage.initStyle(StageStyle.UNDECORATED);
         registerStage.setTitle("注册");
         registerStage.getIcons().add(new Image(Main.class.getResourceAsStream("../resources/static/img/MagicChatLogo.png")));
+    }
+
+    public static Stage getFriendsListStage() {
+        return friendsListStage;
     }
 
     public static Stage getRecoverStage() {

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane fx:id="mainPane" prefHeight="591.0" prefWidth="344.0" styleClass="mainPane" stylesheets="@../static/style/friendsList.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.com.chatroomclient.java.controller.HomeController">
+   <children>
+      <ImageView fx:id="background" fitHeight="356.0" fitWidth="330.0" layoutX="7.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../static/img/Shenzhen.png" />
+         </image></ImageView>
+      <ImageView fitHeight="20.0" fitWidth="21.0" layoutX="6.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../static/img/MagicChatLogo.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="closeBtn" layoutX="309.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#closeBtnMouseClick" onMouseEntered="#closeBtnMouseEnter" onMouseExited="#closeBtnMouseExit" styleClass="titleBarBtn" stylesheets="@../static/style/friendsList.css" text="❌" />
+      <Button fx:id="minBtn" layoutX="272.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#minBtnMouseClick" onMouseEntered="#minBtnMouseEnter" onMouseExited="#minBtnMouseExit" styleClass="titleBarBtn" stylesheets="@../static/style/friendsList.css" text="一" />
+<!--      <ImageView fitHeight="61.0" fitWidth="73.0" layoutX="16.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true" styleClass="avatar">-->
+<!--         <image>-->
+<!--            <Image url="@../static/img/DefaultAvatar.png" />-->
+<!--         </image>-->
+<!--      </ImageView>-->
+      <StackPane layoutX="16.0" layoutY="29.0">
+         <prefWidth>60</prefWidth>
+         <prefHeight>60</prefHeight>
+         <padding>
+            <Insets topRightBottomLeft="5" />
+         </padding>
+<!--         阴影效果-->
+         <effect>
+            <DropShadow>
+               <radius>5</radius>
+               <offsetY>2.0</offsetY>
+            </DropShadow>
+         </effect>
+         <children>
+            <ImageView fx:id="avatar" layoutX="16.0" layoutY="37.0" styleClass="avatar">
+               <image>
+                  <Image backgroundLoading="true" url="@../static/img/DefaultAvatar.png" />
+               </image>
+               <fitWidth>60</fitWidth>
+               <fitHeight>60</fitHeight>
+               <clip>
+                  <Circle fx:id="circle" centerX="30" centerY="30" fill="aqua">
+                     <radius>30</radius>
+                  </Circle>
+               </clip>
+            </ImageView>
+         </children>
+      </StackPane>
+      <ChoiceBox fx:id="skinBtn" layoutX="232.0" layoutY="1.0" onMouseEntered="#skinBtnMouseEnter" onMouseExited="#skinBtnMouseExit" opacity="0.5" prefHeight="30.0" prefWidth="27.0" styleClass="skinBtn" stylesheets="@../static/style/friendsList.css">
+         <effect>
+            <ImageInput x="10.0" y="6.0">
+               <source>
+                  <Image url="@../static/img/skinChoice.png" />
+               </source>
+            </ImageInput>
+         </effect>
+      </ChoiceBox>
+   </children>
+</AnchorPane>
