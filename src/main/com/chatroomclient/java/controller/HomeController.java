@@ -6,16 +6,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Circle;
 import main.com.chatroomclient.java.common.constant.ApplicationConstant;
 import main.com.chatroomclient.java.utils.SkinUtil;
 
 import java.net.URL;
+import java.util.Collections;
 import java.util.ResourceBundle;
 
 
@@ -40,7 +43,17 @@ public class HomeController implements Initializable {
     private ChoiceBox<String> skinBtn = new ChoiceBox<String>();
     private ObservableList<String> options = FXCollections.observableArrayList(new SkinUtil().getSkinNames());
 
-    @FXML ImageView avatar;
+    @FXML
+    private ImageView avatar;
+
+    @FXML
+    private Label userName = new Label();
+
+    @FXML
+    private TextField signature = new TextField();
+
+    @FXML
+    private VBox messageList = new VBox();
 
     /**
      * @Author GirtSeanking
@@ -56,13 +69,19 @@ public class HomeController implements Initializable {
         /* 皮肤选择器按钮初始化 */
         skinBtnInitialize();
 
-        /* 设置背景图片 */
+        /* 设置皮肤样式和更改背景图片 */
         setBackground(ApplicationConstant.DEFAULT_SKIN);
+
+        /* 设置用户信息 */
+        setUserImformation();
+
+        /* 设置消息列表 */
+        setMessageList();
     }
 
     /**
      * @Author GirtSeanking
-     * @Description //TODO 设置皮肤样式和更改图片
+     * @Description //TODO 设置皮肤样式和更改背景图片
      * @Date 20:59
      * @Param [mainSkin]
      * @return void
@@ -83,6 +102,10 @@ public class HomeController implements Initializable {
         /* 设置按钮字体颜色 */
         closeBtn.setStyle("-fx-text-fill: rgb(" + mainSkin.getBtnColor().getRed() +"," + mainSkin.getBtnColor().getGreen() + "," + mainSkin.getBtnColor().getBlue() + ");");
         minBtn.setStyle("-fx-text-fill: rgb(" + mainSkin.getBtnColor().getRed() +"," + mainSkin.getBtnColor().getGreen() + "," + mainSkin.getBtnColor().getBlue() + ");");
+
+        /* 设置字体颜色 */
+        userName.setStyle("-fx-text-fill: rgb(" + mainSkin.getBtnColor().getRed() +"," + mainSkin.getBtnColor().getGreen() + "," + mainSkin.getBtnColor().getBlue() + ");");
+        signature.setStyle("-fx-text-fill: rgb(" + mainSkin.getBtnColor().getRed() +"," + mainSkin.getBtnColor().getGreen() + "," + mainSkin.getBtnColor().getBlue() + ");");
     }
 
     /**
@@ -173,4 +196,66 @@ public class HomeController implements Initializable {
                         });
     }
 
+    /**
+     * @Author GirtSeanking
+     * @Description //TODO 设置用户的信息
+     * @Date 15:44
+     * @Param []
+     * @return void
+     **/
+    private void setUserImformation() {
+        /* 设置用户名 */
+        userName.setText("GirtSeanking");
+
+        /* 设置用户个性签名 */
+        signature.setText("Break a leg! Someone like you. Carpe diem!");
+    }
+
+    /**
+     * @Author GirtSeanking
+     * @Description //TODO 个性签名点击事件响应
+     * @Date 18:23
+     * @Param [mouseEvent]
+     * @return void
+     **/
+    public void signatureMouseClick(MouseEvent mouseEvent) {
+        signature.setEditable(true);
+        signature.selectAll();
+    }
+
+    /**
+     * @Author GirtSeanking
+     * @Description //TODO 初始化消息列表 (未实现)
+     * @Date 20:54
+     * @Param []
+     * @return void
+     **/
+    public void setMessageList() {
+        ImageView userAvatar = new ImageView();
+        Image userAvatarImage = new Image("main/com/chatroomclient/resources/static/img/test1.png");
+        Circle avatarCircle = new Circle();
+        avatarCircle.setCenterX(25);
+        avatarCircle.setCenterY(25);
+        avatarCircle.setFill(Paint.valueOf("aqua"));
+        avatarCircle.setRadius(25);
+        userAvatar.setImage(userAvatarImage);
+        userAvatar.setFitWidth(50);
+        userAvatar.setFitHeight(50);
+        userAvatar.setClip(avatarCircle);
+        messageList.getChildren().add(userAvatar);
+        ImageView userAvatar2 = new ImageView();
+        userAvatarImage = new Image("main/com/chatroomclient/resources/static/img/Bros.png");
+        userAvatar2.setImage(userAvatarImage);
+        userAvatar2.setFitWidth(50);
+        userAvatar2.setFitHeight(50);
+        userAvatar2.setClip(avatarCircle);
+        messageList.getChildren().add(userAvatar2);
+        ImageView userAvatar3 = new ImageView();
+        userAvatarImage = new Image("main/com/chatroomclient/resources/static/img/GitHub.png");
+        userAvatar3.setImage(userAvatarImage);
+        userAvatar3.setFitWidth(50);
+        userAvatar3.setFitHeight(50);
+        userAvatar3.setClip(avatarCircle);
+        messageList.getChildren().addAll(userAvatar3);
+    }
 }

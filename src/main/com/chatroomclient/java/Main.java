@@ -76,7 +76,7 @@ public class Main extends Application {
     /**
      * @Author GirtSeanking
      * @Description //TODO 程序主界面 好友列表窗口
-     * @Date 20:11 
+     * @Date 21:48 
      * @Param []
      * @return void
      **/

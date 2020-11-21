@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.geometry.Insets?>
 
-<AnchorPane fx:id="mainPane" prefHeight="591.0" prefWidth="344.0" styleClass="mainPane" stylesheets="@../static/style/friendsList.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.com.chatroomclient.java.controller.HomeController">
+<AnchorPane fx:id="mainPane" prefHeight="659.0" prefWidth="249.0" styleClass="mainPane" stylesheets="@../static/style/friendsList.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.com.chatroomclient.java.controller.HomeController">
    <children>
       <ImageView fx:id="background" fitHeight="356.0" fitWidth="330.0" layoutX="7.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
@@ -25,12 +25,7 @@
          </image>
       </ImageView>
       <Button fx:id="closeBtn" layoutX="309.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#closeBtnMouseClick" onMouseEntered="#closeBtnMouseEnter" onMouseExited="#closeBtnMouseExit" styleClass="titleBarBtn" stylesheets="@../static/style/friendsList.css" text="❌" />
-      <Button fx:id="minBtn" layoutX="272.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#minBtnMouseClick" onMouseEntered="#minBtnMouseEnter" onMouseExited="#minBtnMouseExit" styleClass="titleBarBtn" stylesheets="@../static/style/friendsList.css" text="一" />
-<!--      <ImageView fitHeight="61.0" fitWidth="73.0" layoutX="16.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true" styleClass="avatar">-->
-<!--         <image>-->
-<!--            <Image url="@../static/img/DefaultAvatar.png" />-->
-<!--         </image>-->
-<!--      </ImageView>-->
+      <Button fx:id="minBtn" layoutX="272.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#minBtnMouseClick" onMouseEntered="#minBtnMouseEnter" onMouseExited="#minBtnMouseExit" styleClass="titleBarBtn" stylesheets="@../static/style/friendsList.css" text="━" />
       <StackPane layoutX="16.0" layoutY="29.0">
          <prefWidth>60</prefWidth>
          <prefHeight>60</prefHeight>
@@ -68,5 +63,34 @@
             </ImageInput>
          </effect>
       </ChoiceBox>
+      <Label fx:id="userName" layoutX="102.0" layoutY="44.0" />
+      <TextField fx:id="signature" editable="false" layoutX="94.0" layoutY="64.0" onMouseClicked="#signatureMouseClick" styleClass="signature" stylesheets="@../static/style/friendsList.css">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </TextField>
+      <TextField layoutY="112.0" prefHeight="30.0" prefWidth="344.0" promptText="搜索" styleClass="search" stylesheets="@../static/style/friendsList.css" />
+      <TabPane fx:id="tablePane" layoutY="141.0" prefHeight="473.0" prefWidth="344.0" styleClass="tablePane" stylesheets="@../static/style/friendsList.css" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="消息">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="419.0" prefWidth="344.0">
+                     <children>
+                        <VBox fx:id="messageList" layoutY="2.0" prefHeight="434.0" prefWidth="344.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="联系人">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <ToolBar layoutY="615.0" prefHeight="44.0" prefWidth="344.0">
+        <items>
+          <Button mnemonicParsing="false" text="Button" />
+        </items>
+      </ToolBar>
    </children>
 </AnchorPane>

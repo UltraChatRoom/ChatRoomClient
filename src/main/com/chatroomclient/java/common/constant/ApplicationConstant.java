@@ -21,7 +21,7 @@ public class ApplicationConstant {
         /* 需要添加新的皮肤在这里设置并且添加参数 */
         SUZHOU("苏州", "main/com/chatroomclient/resources/static/img/Suzhou.png", Color.black),
         SHENGZHEN("深圳", "main/com/chatroomclient/resources/static/img/Shenzhen.png", Color.black),
-        YUCAI("云彩", "main/com/chatroomclient/resources/static/img/Yuncai.png", Color.white);
+        SHOES("Shoes", "main/com/chatroomclient/resources/static/img/Shoes.png", Color.black);
 
         /** 皮肤名字 */
         private final String skinName;
@@ -55,6 +55,6 @@ public class ApplicationConstant {
      * 程序主界面默认背景
      * 修改参数可以实现系统默认皮肤的更改
      */
-    public static final MAIN_BACKGROUND DEFAULT_SKIN = MAIN_BACKGROUND.YUCAI;
+    public static final MAIN_BACKGROUND DEFAULT_SKIN = MAIN_BACKGROUND.SHENGZHEN;
 
 }

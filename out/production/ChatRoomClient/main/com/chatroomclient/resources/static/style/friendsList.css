@@ -17,11 +17,73 @@
 .avatar:pressed {
     -fx-opacity: 0.8;
 }
-
+/* 皮肤选择器样式 */
 .skinBtn {
 
 }
-
+/* 皮肤选择器鼠标悬停时样式 */
 .skinBtn:hover {
     -fx-opacity: 1;
 }
+/* 选择框的样式 */
+   .choice-box .context-menu { -fx-background-color: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%); }
+   .choice-box .menu-item:focused { -fx-background-color: linear-gradient(to right, #0acffe 0%, #495aff 100%); }
+   .choice-box .menu-item > .label { -fx-text-fill: black; }
+   .choice-box .menu-item:focused > .label { -fx-text-fill: white; }
+
+/* 个性签名样式 */
+.signature {
+    -fx-background-color: #00000000;
+}
+/* 个性签名鼠标悬停时样式 */
+.signature:hover {
+    -fx-background-color: #99999999;
+}
+
+.signature:focused {
+    -fx-border-color: #0066ff;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* TabPane常用样式 */
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: #00000000;
+    -fx-text-fill: white;
+}
+.table-pane{
+    -fx-background-color: #fff;
+}
+AnchorPane {
+    -fx-background-color: #00000000;
+}
+
+/* 常用Tab样式 */
+.tab{
+    -fx-font-size: 14px;
+    -fx-background-color: white;
+    -fx-background-size: 15px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-insets: 100%;
+}
+.tab:hover{
+    -fx-background-color: #1a83e1;
+    -fx-text-fill: white;
+    -fx-color : #1a83e1;
+}
+.tab:selected{
+    -fx-background-color: #1a83e1;
+    -fx-text-fill: white;
+    -fx-color : #1a83e1;
+}
+
+.search {
+    -fx-border-width: 0 0 0 0;
+    -fx-background-color: rgba(229, 228, 228, 0.6);
+}
+
+.search:focused {
+    -fx-border-color: #0066ff;
+    -fx-border-width: 0 0 1 0;
+}
+
+

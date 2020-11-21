@@ -14,3 +14,16 @@
 .welcomeLabel {
     -fx-background-color: white;
 }
+
+.text-field {
+    -fx-background-color: -fx-text-box-border, -fx-background ;
+    -fx-background-insets: 0, 0 0 1 0 ;
+    -fx-background-radius: 0 ;
+    -fx-border-color: black;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+}
+.text-field:focused {
+    -fx-background-color: -fx-focus-color, -fx-background ;
+    -fx-border-color: #007bff;
+}
