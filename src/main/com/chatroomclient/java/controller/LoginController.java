@@ -74,9 +74,6 @@ public class LoginController {
             /* 窗口移动监听器 */
             DragUtil.addDragListener(Main.getFriendsListStage(), root);
 
-            /* 界面初始化 */
-//            new HomeController().initialize();
-
             Main.getLoginStage().hide();
             Main.getFriendsListStage().show();
         } catch (IOException e) {

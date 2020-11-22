@@ -1,14 +1,21 @@
 package main.com.chatroomclient.java.controller;
 
+import javafx.animation.Animation;
+import javafx.animation.Transition;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.util.Duration;
 import main.com.chatroomclient.java.Main;
 import main.com.chatroomclient.java.common.constant.UserConstants;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * @className: RegisterController
@@ -18,7 +25,7 @@ import main.com.chatroomclient.java.common.constant.UserConstants;
  * @create: 2020-11-16 21:35
  **/
 
-public class RegisterController {
+public class RegisterController implements Initializable {
 
     @FXML
     private Button closeBtn;
@@ -27,7 +34,7 @@ public class RegisterController {
     private Button backBtn;
 
     @FXML
-    private Label welcomeLabel;
+    private Label welcomeLabel = new Label();
 
     @FXML
     private TextField userName;
@@ -46,6 +53,18 @@ public class RegisterController {
 
     @FXML
     private Button registerBtn;
+
+    /**
+     * @Author GirtSeanking
+     * @Description //TODO 初始化界面
+     * @Date 18:33
+     * @Param [url, resourceBundle]
+     * @return void
+     **/
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        typingEffect("注册");
+    }
 
     /**
      * @Author GirtSeanking
@@ -128,18 +147,18 @@ public class RegisterController {
      **/
     public boolean judgeUserName() {
         if (userName.getText().isEmpty()) {
-            welcomeLabel.setText("注册");
+            typingEffect("注册");
             return false;
         } else if (!userName.getText().matches(UserConstants.SPACE_REG)) {
-            welcomeLabel.setText("昵称中不能有空格");
+            typingEffect("昵称中不能有空格");
             userName.setText("");
             return false;
         } else {
             if (userName.getText().length() > UserConstants.USERNAME_MAX_LENGTH) {
-                welcomeLabel.setText("您输入的昵称过长");
+                typingEffect("您输入的昵称过长");
                 return false;
             }  else {
-                welcomeLabel.setText("欢迎 " + userName.getText() + " 来到MC");
+                typingEffect("欢迎 " + userName.getText() + " 来到MC");
                 return true;
             }
         }
@@ -165,26 +184,26 @@ public class RegisterController {
      **/
     public boolean judgePassword() {
         if (registerPassword.getText().isEmpty()) {
-            welcomeLabel.setText("注册");
+            typingEffect("注册");
             return false;
         } else if (!registerPassword.getText().matches(UserConstants.SPACE_REG)) {
-            welcomeLabel.setText("密码中不能存在空格");
+            typingEffect("密码中不能存在空格");
             registerPassword.setText("");
             return false;
         } else if (registerPassword.getText().length() < UserConstants.PASSWORD_MIN_LENGTH) {
-            welcomeLabel.setText("密码长度过短");
+            typingEffect("密码长度过短");
             return false;
         } else if (registerPassword.getText().length() > UserConstants.PASSWORD_MAX_LENGTH) {
-            welcomeLabel.setText("密码长度过长");
+            typingEffect("密码长度过长");
             return false;
         } else if (!passwordStrengthJudgement()) {
-            welcomeLabel.setText("密码至少包含数字、大小写字母、特殊字符中的两种");
+            typingEffect("密码至少包含数字、大小写字母、特殊字符中的两种");
             return false;
         } else if (registerPassword.getText().length() != registerPassword.getText().getBytes().length) {
-            welcomeLabel.setText("密码中不能存在汉字");
+            typingEffect("密码中不能存在汉字");
             return false;
         } else {
-            welcomeLabel.setText("密码格式正确");
+            typingEffect("密码格式正确");
             return true;
         }
     }
@@ -233,21 +252,21 @@ public class RegisterController {
      **/
     public boolean judgePasswordAaging() {
         if (registerPasswordAgain.getText().isEmpty()) {
-            welcomeLabel.setText("注册");
+            typingEffect("注册");
             return false;
         } else if (!registerPasswordAgain.getText().matches(UserConstants.SPACE_REG)) {
-            welcomeLabel.setText("不能输入空格");
+            typingEffect("不能输入空格");
             registerPasswordAgain.setText("");
             return false;
         } else if (registerPassword.getText().isEmpty()) {
-            welcomeLabel.setText("您还未设置登录密码");
+            typingEffect("您还未设置登录密码");
             registerPasswordAgain.setText("");
             return false;
         } else if (registerPassword.getText().equals(registerPasswordAgain.getText())) {
-            welcomeLabel.setText("两次密码一致");
+            typingEffect("两次密码一致");
             return true;
         } else {
-            welcomeLabel.setText("两次密码不一致");
+            typingEffect("两次密码不一致");
             return false;
         }
     }
@@ -272,16 +291,16 @@ public class RegisterController {
      **/
     public boolean judgeScurityQuestion() {
         if (securityQuestion.getText().isEmpty()) {
-            welcomeLabel.setText("注册");
+            typingEffect("注册");
             return false;
         } else if (!securityQuestion.getText().matches(UserConstants.SPACE_REG)) {
-            welcomeLabel.setText("设置的密保问题中不能存在空格");
+            typingEffect("设置的密保问题中不能存在空格");
             return false;
         } else if (securityQuestion.getText().length() > UserConstants.SCURITY_QUESTION_MAX_LENGTH) {
-            welcomeLabel.setText("设置的密保问题内容过长");
+            typingEffect("设置的密保问题内容过长");
             return false;
         } else {
-            welcomeLabel.setText("请尽量设置简短又好记的问题");
+            typingEffect("请尽量设置简短又好记的问题");
             return true;
         }
     }
@@ -306,16 +325,16 @@ public class RegisterController {
      **/
     public boolean judgeQuestionAnswer() {
         if (questionAnswer.getText().isEmpty()) {
-            welcomeLabel.setText("注册");
+            typingEffect("注册");
             return false;
         } else if (questionAnswer.getText().matches(UserConstants.SPACE_REG)) {
-            welcomeLabel.setText("设置答案中不能存在空格");
+            typingEffect("设置答案中不能存在空格");
             return false;
         } else if (questionAnswer.getText().length() > UserConstants.QUESTION_ANSWER_MAX_LENGTH) {
-            welcomeLabel.setText("设置的答案内容过长");
+            typingEffect("设置的答案内容过长");
             return false;
         } else {
-            welcomeLabel.setText("请尽量设置简短又好记的答案");
+            typingEffect("请尽量设置简短又好记的答案");
             return true;
         }
     }
@@ -351,7 +370,7 @@ public class RegisterController {
         if (judgeRegisterForm()) {
             userReister();
         } else {
-            welcomeLabel.setText("请仔细填写注册信息");
+            typingEffect("请仔细填写注册信息");
         }
     }
 
@@ -388,6 +407,21 @@ public class RegisterController {
         
     }
 
+    public void typingEffect(String msg) {
+        final Animation animation = new Transition() {
+            {
+                setCycleDuration(Duration.millis(700));
+            }
+
+            @Override
+            protected void interpolate(double frac) {
+                final int length = msg.length();
+                final int n = Math.round(length * (float) frac);
+                welcomeLabel.setText(msg.substring(0, n));
+            }
+        };
+        animation.play();
+    }
 
 
 }

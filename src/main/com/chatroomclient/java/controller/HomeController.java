@@ -11,12 +11,15 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import main.com.chatroomclient.java.common.constant.ApplicationConstant;
+import main.com.chatroomclient.java.utils.MessageListUtils;
 import main.com.chatroomclient.java.utils.SkinUtil;
 
+import javax.swing.text.Style;
 import java.net.URL;
 import java.util.Collections;
 import java.util.ResourceBundle;
@@ -53,7 +56,13 @@ public class HomeController implements Initializable {
     private TextField signature = new TextField();
 
     @FXML
-    private VBox messageList = new VBox();
+    private ListView messageList = new ListView();
+
+    @FXML
+    private AnchorPane messagesPane = new AnchorPane();
+    
+    @FXML
+    private TreeView contactList = new TreeView();
 
     /**
      * @Author GirtSeanking
@@ -77,6 +86,9 @@ public class HomeController implements Initializable {
 
         /* 设置消息列表 */
         setMessageList();
+        
+        /* 设置联系人列表 */
+        
     }
 
     /**
@@ -96,7 +108,7 @@ public class HomeController implements Initializable {
             background.setVisible(false);
             mainPane.setStyle("-fx-background-image: url('" + mainSkin.getSkinUrl() +"');" +
                     "-fx-background-position: center center;" +
-                    "-fx-background-repeat: stretch");
+                    "-fx-background-repeat: stretch;");
         }
 
         /* 设置按钮字体颜色 */
@@ -120,49 +132,7 @@ public class HomeController implements Initializable {
         System.exit(0);
     }
 
-    /**
-     * @Author GirtSeanking
-     * @Description //TODO 关闭窗口按钮样式变化设置
-     * @Date 20:44
-     * @Param [mouseEvent]
-     * @return void
-     **/
-    public void closeBtnMouseEnter(MouseEvent mouseEvent) {
-        closeBtn.setStyle("-fx-background-color: #99999999");
-    }
-    public void closeBtnMouseExit(MouseEvent mouseEvent) {
-        closeBtn.setStyle("-fx-background-color: #00000000");
-    }
-
     public void minBtnMouseClick(MouseEvent mouseEvent) {
-    }
-
-    /**
-     * @Author GirtSeanking
-     * @Description //TODO 小化窗口按钮点击样式变化设置
-     * @Date 20:44
-     * @Param [mouseEvent]
-     * @return void
-     **/
-    public void minBtnMouseEnter(MouseEvent mouseEvent) {
-        minBtn.setStyle("-fx-background-color: #99999999");
-    }
-    public void minBtnMouseExit(MouseEvent mouseEvent) {
-        minBtn.setStyle("-fx-background-color: #00000000");
-    }
-
-    /**
-     * @Author GirtSeanking
-     * @Description //TODO 皮肤更换按钮样式变化设置
-     * @Date 20:46
-     * @Param [mouseEvent]
-     * @return void
-     **/
-    public void skinBtnMouseEnter(MouseEvent mouseEvent) {
-        skinBtn.setStyle("-fx-background-color: #99999999");
-    }
-    public void skinBtnMouseExit(MouseEvent mouseEvent) {
-        skinBtn.setStyle("-fx-background-color: #00000000");
     }
 
     /**
@@ -231,31 +201,28 @@ public class HomeController implements Initializable {
      * @return void
      **/
     public void setMessageList() {
-        ImageView userAvatar = new ImageView();
-        Image userAvatarImage = new Image("main/com/chatroomclient/resources/static/img/test1.png");
-        Circle avatarCircle = new Circle();
-        avatarCircle.setCenterX(25);
-        avatarCircle.setCenterY(25);
-        avatarCircle.setFill(Paint.valueOf("aqua"));
-        avatarCircle.setRadius(25);
-        userAvatar.setImage(userAvatarImage);
-        userAvatar.setFitWidth(50);
-        userAvatar.setFitHeight(50);
-        userAvatar.setClip(avatarCircle);
-        messageList.getChildren().add(userAvatar);
-        ImageView userAvatar2 = new ImageView();
-        userAvatarImage = new Image("main/com/chatroomclient/resources/static/img/Bros.png");
-        userAvatar2.setImage(userAvatarImage);
-        userAvatar2.setFitWidth(50);
-        userAvatar2.setFitHeight(50);
-        userAvatar2.setClip(avatarCircle);
-        messageList.getChildren().add(userAvatar2);
-        ImageView userAvatar3 = new ImageView();
-        userAvatarImage = new Image("main/com/chatroomclient/resources/static/img/GitHub.png");
-        userAvatar3.setImage(userAvatarImage);
-        userAvatar3.setFitWidth(50);
-        userAvatar3.setFitHeight(50);
-        userAvatar3.setClip(avatarCircle);
-        messageList.getChildren().addAll(userAvatar3);
+        messageList.setStyle("-fx-background-color: #00000000");
+        messagesPane.setStyle("-fx-background-color: #00000000");
+
+        ObservableList<MessageListUtils.AnchorPaneCell> myList = FXCollections.observableArrayList(new MessageListUtils().getMessagesList());
+        messageList.setItems(myList);
+
+        if (messageList.getItems().isEmpty()) {
+            messagesPane.setStyle("-fx-background-image: url('" + ApplicationConstant.MESSAGES_BACKGROUND +"');" +
+                    "-fx-background-position: center center;" +
+                    "-fx-background-repeat: stretch;" +
+                    "-fx-background-color: white;");
+        }
+    }
+    
+    /**
+     * @Author GirtSeanking
+     * @Description //TODO 设置联系人列表
+     * @Date 14:05
+     * @Param []
+     * @return void
+     **/
+    public void setContactList() {
+        
     }
 }

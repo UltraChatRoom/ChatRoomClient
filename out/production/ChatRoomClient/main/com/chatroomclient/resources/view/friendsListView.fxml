@@ -24,8 +24,8 @@
             <Image url="@../static/img/MagicChatLogo.png" />
          </image>
       </ImageView>
-      <Button fx:id="closeBtn" layoutX="309.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#closeBtnMouseClick" onMouseEntered="#closeBtnMouseEnter" onMouseExited="#closeBtnMouseExit" styleClass="titleBarBtn" stylesheets="@../static/style/friendsList.css" text="❌" />
-      <Button fx:id="minBtn" layoutX="272.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#minBtnMouseClick" onMouseEntered="#minBtnMouseEnter" onMouseExited="#minBtnMouseExit" styleClass="titleBarBtn" stylesheets="@../static/style/friendsList.css" text="━" />
+      <Button fx:id="closeBtn" layoutX="309.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#closeBtnMouseClick" styleClass="titleBarBtn" stylesheets="@../static/style/friendsList.css" text="❌" />
+      <Button fx:id="minBtn" layoutX="272.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#minBtnMouseClick" styleClass="titleBarBtn" stylesheets="@../static/style/friendsList.css" text="━" />
       <StackPane layoutX="16.0" layoutY="29.0">
          <prefWidth>60</prefWidth>
          <prefHeight>60</prefHeight>
@@ -54,7 +54,7 @@
             </ImageView>
          </children>
       </StackPane>
-      <ChoiceBox fx:id="skinBtn" layoutX="232.0" layoutY="1.0" onMouseEntered="#skinBtnMouseEnter" onMouseExited="#skinBtnMouseExit" opacity="0.5" prefHeight="30.0" prefWidth="27.0" styleClass="skinBtn" stylesheets="@../static/style/friendsList.css">
+      <ChoiceBox fx:id="skinBtn" layoutX="232.0" layoutY="1.0" opacity="0.5" prefHeight="30.0" prefWidth="27.0" styleClass="skinBtn" stylesheets="@../static/style/friendsList.css">
          <effect>
             <ImageInput x="10.0" y="6.0">
                <source>
@@ -74,9 +74,9 @@
         <tabs>
           <Tab text="消息">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="419.0" prefWidth="344.0">
+              <AnchorPane fx:id="messagesPane" minHeight="0.0" minWidth="0.0" prefHeight="419.0" prefWidth="344.0">
                      <children>
-                        <VBox fx:id="messageList" layoutY="2.0" prefHeight="434.0" prefWidth="344.0" />
+                        <ListView fx:id="messageList" layoutY="-1.0" prefHeight="443.0" prefWidth="344.0" styleClass="listView" stylesheets="@../static/style/friendsList.css" />
                      </children></AnchorPane>
             </content>
           </Tab>
